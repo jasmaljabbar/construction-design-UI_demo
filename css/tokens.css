@@ -1,0 +1,81 @@
+/* Design tokens — mirrors the Figma file's Primitives / Color Light / Color Dark /
+   Spacing / Radius collections and the Inter type ramp. Keep in sync with Figma. */
+
+:root {
+  /* Color — light (default) */
+  --color-bg-primary: #F8FAFC;
+  --color-bg-surface: #FFFFFF;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #64748B;
+  --color-text-on-brand: #FFFFFF;
+  --color-border-default: #E2E8F0;
+  --color-brand-primary: #142B49;
+  --color-brand-secondary: #3478F6;
+  --color-accent-secondary-bg: #DBEAFE;
+  --color-status-success: #16A34A;
+  --color-status-success-bg: #DCFCE7;
+  --color-status-warning: #F59E0B;
+  --color-status-warning-bg: #FEF3C7;
+  --color-status-error: #DC2626;
+  --color-status-error-bg: #FEE2E2;
+  --color-disabled-bg: #E2E8F0;
+  --color-disabled-text: #94A3B8;
+  --color-scrim: rgba(13, 20, 38, 0.55);
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Radius */
+  --radius-none: 0px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* Elevation */
+  --elevation-sm: 0 1px 3px rgba(13, 20, 38, 0.08);
+  --elevation-md: 0 4px 12px rgba(13, 20, 38, 0.10);
+
+  /* Type ramp (Inter) */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --text-display: 600 28px/36px var(--font-family);
+  --text-heading: 600 20px/28px var(--font-family);
+  --text-title: 600 16px/24px var(--font-family);
+  --text-body: 400 14px/20px var(--font-family);
+  --text-body-emphasis: 500 14px/20px var(--font-family);
+  --text-label: 500 12px/16px var(--font-family);
+  --text-caption: 400 11px/14px var(--font-family);
+  --text-button: 600 14px/20px var(--font-family);
+  --text-numeric-lg: 600 22px/28px var(--font-family);
+  --text-numeric-md: 600 17px/24px var(--font-family);
+
+  --phone-width: 390px;
+  --phone-height: 844px;
+  --topbar-height: 56px;
+  --navbar-height: 64px;
+}
+
+[data-theme="dark"] {
+  --color-bg-primary: #020617;
+  --color-bg-surface: #0F172A;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+  --color-text-on-brand: #FFFFFF;
+  --color-border-default: #334155;
+  --color-brand-primary: #1E3A5F;
+  --color-brand-secondary: #60A5FA;
+  --color-accent-secondary-bg: #0B1F3F;
+  --color-status-success: #4ADE80;
+  --color-status-success-bg: #052E16;
+  --color-status-warning: #FBBF24;
+  --color-status-warning-bg: #451A03;
+  --color-status-error: #F87171;
+  --color-status-error-bg: #450A0A;
+  --color-disabled-bg: #334155;
+  --color-disabled-text: #64748B;
+}
