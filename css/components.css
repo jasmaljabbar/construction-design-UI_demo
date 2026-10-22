@@ -4,8 +4,13 @@
 
 * { box-sizing: border-box; }
 
-body {
+html, body {
   margin: 0;
+  overflow-x: hidden; /* never let the page itself scroll sideways */
+  width: 100%;
+}
+
+body {
   font: var(--text-body);
   color: var(--color-text-primary);
   background: #E2E8F0;
@@ -31,6 +36,17 @@ body {
   background: var(--color-bg-primary);
 }
 
+/* Lightweight native-feeling slide transition between screens. The router
+   tags the incoming .screen with one of these on every render; direction is
+   "forward" unless the trigger was a back-arrow / hamburger (data-back). */
+@keyframes slideInForward { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes slideInBack { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+.screen.slide-in-forward { animation: slideInForward 0.26s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.screen.slide-in-back { animation: slideInBack 0.26s cubic-bezier(0.22, 0.61, 0.36, 1); }
+@media (prefers-reduced-motion: reduce) {
+  .screen.slide-in-forward, .screen.slide-in-back { animation: none; }
+}
+
 .screen-body {
   flex: 1;
   overflow-y: auto;
@@ -44,30 +60,46 @@ body {
 
 /* ---------- Top App Bar ---------- */
 .app-bar {
-  height: var(--topbar-height);
-  min-height: var(--topbar-height);
+  height: calc(var(--topbar-height) + env(safe-area-inset-top, 0px));
+  min-height: calc(var(--topbar-height) + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  padding: 0 var(--spacing-md);
+  padding-left: max(var(--spacing-md), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--spacing-md), env(safe-area-inset-right, 0px));
   flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 15;
 }
 .app-bar.root { background: var(--color-brand-primary); color: var(--color-text-on-brand); }
 .app-bar.detail { background: var(--color-bg-surface); color: var(--color-text-primary); border-bottom: 1px solid var(--color-border-default); }
-.app-bar .icon-btn { font: var(--text-title); background: none; border: none; color: inherit; cursor: pointer; line-height: 1; padding: 4px; }
+.app-bar .icon-btn {
+  font: var(--text-title); background: none; border: none; color: inherit; cursor: pointer;
+  min-width: 44px; min-height: 44px; padding: 0; margin: 0 -10px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
 .app-bar .title { font: var(--text-heading); flex: 1; color: inherit; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* ---------- Bottom Navigation Bar ---------- */
 .bottom-nav {
-  height: var(--navbar-height);
-  min-height: var(--navbar-height);
+  height: calc(var(--navbar-height) + env(safe-area-inset-bottom, 0px));
+  min-height: calc(var(--navbar-height) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
   display: flex;
   background: var(--color-bg-surface);
   border-top: 1px solid var(--color-border-default);
   flex-shrink: 0;
+  position: sticky;
+  bottom: 0;
+  z-index: 15;
 }
 .bottom-nav .tab {
   flex: 1;
+  min-height: 44px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -324,3 +356,49 @@ body {
 .quick-nav .qn-group { font: var(--text-label); color: var(--color-text-secondary); margin: var(--spacing-sm) 0 2px; text-transform: uppercase; letter-spacing: 0.04em; }
 .quick-nav a { font: var(--text-body); color: var(--color-brand-secondary); text-decoration: none; padding: 4px 6px; border-radius: 6px; }
 .quick-nav a:hover { background: var(--color-accent-secondary-bg); }
+.quick-nav .qn-note { font: var(--text-caption); color: var(--color-text-secondary); margin: var(--spacing-md) 0 0; padding-top: var(--spacing-sm); border-top: 1px solid var(--color-border-default); }
+
+/* =====================================================================
+   MOBILE (< 768px): the quick-nav dev sidebar disappears, the phone frame
+   dissolves into a true full-screen app surface, and the bottom nav /
+   back arrow become the only way to move around — exactly like a real
+   installed Android app. Desktop layout above this point is untouched.
+   ===================================================================== */
+@media (max-width: 767px) {
+  html, body { height: 100%; }
+  body { background: var(--color-bg-primary); }
+
+  .quick-nav { display: none; }
+  .phone-wrap .route-label { display: none; }
+
+  .shell-bg {
+    display: block;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 0;
+    gap: 0;
+  }
+
+  .phone-wrap {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    gap: 0;
+  }
+
+  .phone-shadow {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .phone {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+}

@@ -38,6 +38,7 @@ register('construction/dashboard', () => ({
       <button class="pill" data-route="construction/expenses/new">+ Expense</button>
       <button class="pill" data-route="construction/payments/new">+ Payment</button>
       <button class="pill" data-route="construction/assignments/new">+ Assignment</button>
+      <button class="pill" data-route="construction/customers">Customers</button>
     </div>
     <p class="t-heading m0">Recent activity</p>
     <div class="card-list">
@@ -222,6 +223,7 @@ function projectDetail(id, activeTab) {
         ${InfoRow('Materials + rentals + wages', fmt(p.materialsRentalsWages))}
         ${InfoRow('Estimated margin', fmt(p.originalContract + p.variations - p.materialsRentalsWages), 'success')}
       </div>
+      ${Btn({ label: 'Edit Project', route: `construction/projects/${id}/edit`, style: 'outline' })}
       <p class="t-label-sec m0">Assigned employees</p>
       <div class="card-list">
         ${C.employees.slice(0, 2).map((e) => ListItem({ initials: e.initials, title: e.name, subtitle: e.defaultDailyWage ? `${e.role} · daily wage` : `${e.role}`, trailing: '' }))

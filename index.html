@@ -2,8 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
 <title>Construction &amp; Design Business Manager — Prototype</title>
+
+<!-- Make it feel like an installed app on mobile, not a browser tab -->
+<meta name="theme-color" content="#142B49" />
+<meta name="color-scheme" content="light" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="C&amp;D Manager" />
+<link rel="apple-touch-icon" href="assets/icon.svg" />
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+<link rel="manifest" href="manifest.json" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/tokens.css" />
@@ -42,6 +54,7 @@
       <a href="#/design/reports">Reports</a>
       <p class="qn-group">Presentation</p>
       <a href="#/presentation/title">Customer Presentation</a>
+      <p class="qn-note">This panel is desktop-only — it disappears under 768px, where the app's own bottom nav and back arrows take over.</p>
     </nav>
     <div class="phone-wrap">
       <div class="phone-shadow">

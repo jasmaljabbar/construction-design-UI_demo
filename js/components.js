@@ -59,16 +59,16 @@ export function AppBar({ type = 'root', title = '', back = '' }) {
   if (type === 'root') {
     return `
     <div class="app-bar root">
-      <button class="icon-btn" data-route="#/company-picker">≡</button>
+      <button class="icon-btn" data-route="#/company-picker" data-back aria-label="Switch workspace">≡</button>
       <span class="title">${title}</span>
-      <button class="icon-btn" data-route="#/settings">⋮</button>
+      <button class="icon-btn" data-route="#/settings" aria-label="Settings">⋮</button>
     </div>`;
   }
   return `
   <div class="app-bar detail">
-    <button class="icon-btn" data-route="${back}">←</button>
+    <button class="icon-btn" data-route="${back}" data-back aria-label="Back">←</button>
     <span class="title">${title}</span>
-    <button class="icon-btn">⋮</button>
+    <button class="icon-btn" aria-label="More">⋮</button>
   </div>`;
 }
 
