@@ -1,5 +1,5 @@
-import { register } from '../router.js';
-import { Btn, Field, AppBar, Banner, Chip } from '../components.js';
+import { register } from '../router.js?v=2';
+import { Btn, Field, AppBar, Banner, Chip } from '../components.js?v=2';
 
 register('splash', () => ({
   bg: 'var(--color-brand-primary)',

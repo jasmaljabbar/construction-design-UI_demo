@@ -250,6 +250,22 @@ body {
   z-index: 5;
 }
 
+/* ---------- Bottom Action Bar (sticky single CTA, e.g. presentation "Next") ---------- */
+.bottom-action-bar {
+  background: transparent; /* lets the screen's own bg (light or navy) show through */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  padding-bottom: calc(var(--spacing-md) + env(safe-area-inset-bottom, 0px));
+  padding-left: max(var(--spacing-lg), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--spacing-lg), env(safe-area-inset-right, 0px));
+  flex-shrink: 0;
+  position: sticky;
+  bottom: 0;
+  z-index: 15;
+}
+
 /* ---------- Tabs ---------- */
 .tabs { display: flex; gap: var(--spacing-lg); overflow-x: auto; }
 .tab-item { display: flex; flex-direction: column; gap: var(--spacing-xs); background: none; border: none; cursor: pointer; white-space: nowrap; font-family: var(--font-family); padding: 0; }

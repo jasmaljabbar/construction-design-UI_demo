@@ -95,6 +95,13 @@ export function Fab({ route, label = '+' }) {
   return `<button class="fab" data-route="${route}">${label}</button>`;
 }
 
+// A sticky bottom bar for a single primary action (e.g. "Next →") that must
+// stay reachable without scrolling — used by linear flows like the
+// Customer Presentation deck, as opposed to BottomNav's 5-tab switcher.
+export function BottomActionBar(innerHtml) {
+  return `<div class="bottom-action-bar">${innerHtml}</div>`;
+}
+
 export function Tabs(items, activeKey, routeFor) {
   return `
   <div class="tabs">

@@ -1,10 +1,10 @@
-import { start } from './router.js';
-import './screens/shared.js';
-import './screens/construction-core.js';
-import './screens/construction-people.js';
-import './screens/construction-finance.js';
-import './screens/design.js';
-import './screens/presentation.js';
+import { start } from './router.js?v=2';
+import './screens/shared.js?v=2';
+import './screens/construction-core.js?v=2';
+import './screens/construction-people.js?v=2';
+import './screens/construction-finance.js?v=2';
+import './screens/design.js?v=2';
+import './screens/presentation.js?v=2';
 
 start('#/splash');
 

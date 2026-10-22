@@ -1,6 +1,6 @@
-import { register } from '../router.js';
-import { Btn, Field, TextareaField, Chip, KpiCard, ListItem, AppBar, BottomNav, Fab, Tabs, EmptyState, ConfirmationDialog, InfoRow, ProgressBar, esc } from '../components.js';
-import { construction as C, byId, formatINR as fmt } from '../data.js';
+import { register } from '../router.js?v=2';
+import { Btn, Field, TextareaField, Chip, KpiCard, ListItem, AppBar, BottomNav, Fab, Tabs, EmptyState, ConfirmationDialog, InfoRow, ProgressBar, esc } from '../components.js?v=2';
+import { construction as C, byId, formatINR as fmt } from '../data.js?v=2';
 
 const BACK_DASH = 'construction/dashboard';
 
