@@ -1,6 +1,6 @@
-import { register } from '../router.js?v=2';
-import { Btn, Field, TextareaField, Chip, KpiCard, ListItem, AppBar, BottomNav, Fab, InfoRow, ProgressBar, ConfirmationDialog, EmptyState } from '../components.js?v=2';
-import { design as D, byId, formatINR as fmt } from '../data.js?v=2';
+import { register } from '../router.js?v=3';
+import { Btn, Field, TextareaField, Chip, KpiCard, ListItem, AppBar, BottomNav, Fab, InfoRow, ProgressBar, ConfirmationDialog, EmptyState } from '../components.js?v=3';
+import { design as D, byId, formatINR as fmt } from '../data.js?v=3';
 
 /* ============================= DASHBOARD ============================= */
 register('design/dashboard', () => ({

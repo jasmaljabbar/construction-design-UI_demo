@@ -1,10 +1,10 @@
-import { start } from './router.js?v=2';
-import './screens/shared.js?v=2';
-import './screens/construction-core.js?v=2';
-import './screens/construction-people.js?v=2';
-import './screens/construction-finance.js?v=2';
-import './screens/design.js?v=2';
-import './screens/presentation.js?v=2';
+import { start } from './router.js?v=3';
+import './screens/shared.js?v=3';
+import './screens/construction-core.js?v=3';
+import './screens/construction-people.js?v=3';
+import './screens/construction-finance.js?v=3';
+import './screens/design.js?v=3';
+import './screens/presentation.js?v=3';
 
 start('#/splash');
 

@@ -1,6 +1,6 @@
-import { register } from '../router.js?v=2';
-import { Btn, Field, TextareaField, Chip, ListItem, AppBar, BottomNav, Fab, InfoRow, ProgressBar, Banner, ConfirmationDialog } from '../components.js?v=2';
-import { construction as C, byId, formatINR as fmt } from '../data.js?v=2';
+import { register } from '../router.js?v=3';
+import { Btn, Field, TextareaField, Chip, ListItem, AppBar, BottomNav, Fab, InfoRow, ProgressBar, Banner, ConfirmationDialog } from '../components.js?v=3';
+import { construction as C, byId, formatINR as fmt } from '../data.js?v=3';
 
 /* ============================= MATERIALS ============================= */
 register('construction/materials', () => ({
